@@ -81,7 +81,7 @@ function init() {
             }
         ])
         .then((response) =>
-            writeToFile('testMD', generateMD(response.title, response.desc, response.usage, response.url, response.credits, response.license)),
+            writeToFile('testMD.md', generateMD(response.title, response.desc, response.usage, response.url, response.credits, response.license)),
         );
 };
 
