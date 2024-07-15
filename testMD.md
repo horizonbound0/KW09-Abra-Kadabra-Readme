@@ -1,19 +1,21 @@
-# Test 3
+# no
 
 ## Description
 
-This is the third test of the program because I realized I didn't add the file extension in the original writeToFile call.
+no
 
 ## Usage
 
-You run node index.js in the terminal and answer the prompts that come up. Then the md file appears in the root directory.
+no
 
-[Walkthrough of the app!](https://www.google.com)
+[Walkthrough of the app!](no)
 
 ## Credits
 
-Classes and research!
+no
 
 ## License
 
-This project uses the MIT license, and is available to read in this repository.
+This project uses the no license, and is available to read in this repository.
+
+Here's the confirm test: No
