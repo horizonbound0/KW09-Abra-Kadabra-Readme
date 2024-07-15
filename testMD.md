@@ -1,4 +1,4 @@
-# no
+# no ![License badge](https://img.shields.io/badge/License-MIT-blue)
 
 ## Description
 

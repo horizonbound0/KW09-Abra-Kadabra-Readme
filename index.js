@@ -18,6 +18,9 @@ const questions = [
     'What is your best contact email?'
 ];
 
+// making an object to stuff the users answers into for passing into the functions from generateMarkdown.js
+let userAnswers = {};
+
 // making a function to put the user answers in a string temp literal MD file
 const generateMD = function (projectTitle, description, toc, install, usage, credits, license, contrib, test, contactUN, contactEM) {
     const mdString = `# ${projectTitle}
@@ -49,10 +52,6 @@ ${usage}
 ## Credits
 
 ${credits}
-
-## License
-
-This project uses the ${license} license, and is available to read in this repository.
 
 ## Contributing
 
@@ -90,34 +89,68 @@ function init() {
             },
             {
                 type: 'confirm',
-                message: 'Do you want a Table of Contents?',
+                message: questions[2],
                 name: 'toc',
             },
             {
                 type: "input",
-                message: "How do you install your project?",
+                message: questions[3],
                 name: "installs"
             },
             {
                 type: "input",
-                message: questions[2],
+                message: questions[4],
                 name: "usage",
             },
             {
                 type: "input",
-                message: questions[4],
+                message: questions[5],
                 name: "credits",
             },
             {
                 type: "input",
-                message: questions[5],
+                message: questions[6],
                 name: "license",
+            },
+            {
+                type: "input",
+                message: questions[7],
+                name: "contribute",
+            },
+            {
+                type: "input",
+                message: questions[8],
+                name: "testing",
+            },
+            {
+                type: "input",
+                message: questions[9],
+                name: "user",
+            },
+            {
+                type: "input",
+                message: questions[10],
+                name: "email",
             }
         ])
         .then((response) =>
+            userAnswers.title = response.title,
+            userAnswers.desc = response.desc,
+            userAnswers.toc = response.toc,
+            userAnswers.installs = response.installs,
+            userAnswers.usage = response.usage,
+            userAnswers.credits = response.credits,
+            userAnswers.license = response.license,
+            userAnswers.contribute = response.contribute,
+            userAnswers.testing = response.testing,
+            userAnswers.user = response.user,
+            userAnswers.email = response.email,
+
             writeToFile('testMD.md', generateMD(response.title, response.desc, response.toc, response.installs, response.usage, response.credits, response.license)),
         );
 };
 
 // Function call to initialize app
 init();
+
+console.log(JSON.stringify(userAnswers));
