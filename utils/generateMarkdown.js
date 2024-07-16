@@ -2,7 +2,8 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   const badgeURL = `![License badge image](https://img.shields.io/badge/License-${license}-blue)`;
-  return badgeURL;
+  const spaceChanged = badgeURL.replaceAll(/ /g,"_");
+  return spaceChanged;
 }
 
 // TODO: Create a function that returns the license link
@@ -23,7 +24,7 @@ function renderLicenseSection(license) {
   return `
 ## License
 
-This project uses the ${license} license, and is available to read in this repository.
+This project uses the ${license}, and is available to read in this repository.
 `
 }
 
