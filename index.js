@@ -131,26 +131,13 @@ function init() {
                 type: "input",
                 message: questions[10],
                 name: "email",
-            }
+            },
         ])
         .then((response) =>
-            userAnswers.title = response.title,
-            userAnswers.desc = response.desc,
-            userAnswers.toc = response.toc,
-            userAnswers.installs = response.installs,
-            userAnswers.usage = response.usage,
-            userAnswers.credits = response.credits,
-            userAnswers.license = response.license,
-            userAnswers.contribute = response.contribute,
-            userAnswers.testing = response.testing,
-            userAnswers.user = response.user,
-            userAnswers.email = response.email,
-
-            writeToFile('testMD.md', generateMD(response.title, response.desc, response.toc, response.installs, response.usage, response.credits, response.license)),
+           writeToFile('testMD.md', genMD.generateMarkdown(response)),
+        
         );
 };
 
 // Function call to initialize app
 init();
-
-console.log(JSON.stringify(userAnswers));
