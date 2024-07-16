@@ -1,7 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  const badgeURL = `https://img.shields.io/badge/License-${license}-blue`
+  const badgeURL = `![License badge image](https://img.shields.io/badge/License-${license}-blue)`;
   return badgeURL;
 }
 
@@ -20,7 +20,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  `
+  return `
 ## License
 
 This project uses the ${license} license, and is available to read in this repository.
@@ -29,7 +29,13 @@ This project uses the ${license} license, and is available to read in this repos
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title} ${renderLicenseBadge(data.license)}
+
+  // grab license badge and license MD link
+  const licenseLink = renderLicenseLink(data.license);
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseSection = renderLicenseSection(data.license);
+
+  return `# ${data.title} ${licenseBadge}
 
 ## Description
 
@@ -42,7 +48,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- ${renderLicenseLink(data.license)}
+- ${licenseLink}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
@@ -58,7 +64,9 @@ ${data.usage}
 ## Credits
 
 ${data.credits}
-${renderLicenseSection(data.license)}
+
+${licenseSection}
+
 ## Contributing
 
 ${data.contribute}
