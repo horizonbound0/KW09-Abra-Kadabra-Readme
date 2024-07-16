@@ -18,56 +18,6 @@ const questions = [
     'What is your best contact email?'
 ];
 
-// making an object to stuff the users answers into for passing into the functions from generateMarkdown.js
-let userAnswers = {};
-
-// making a function to put the user answers in a string temp literal MD file
-const generateMD = function (projectTitle, description, toc, install, usage, credits, license, contrib, test, contactUN, contactEM) {
-    const mdString = `# ${projectTitle}
-
-## Description
-
-${description}
-
-${toc ? `## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-` : '---'}
-## Installation
-
-${install}
-
-## Usage
-
-${usage}
-
-## Credits
-
-${credits}
-
-## Contributing
-
-${contrib}
-
-## Tests
-
-${test}
-
-## Questions
-
-If you have any questions about my project I am ${contactUN} on GitHub, and my email address is ${contactEM}`
-
-    return mdString;
-}
-
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => err ? console.log(err) : console.log('success'))
@@ -134,7 +84,7 @@ function init() {
             },
         ])
         .then((response) =>
-           writeToFile('testMD.md', genMD.generateMarkdown(response)),
+           writeToFile('testMD3.md', genMD.generateMarkdown(response)),
         
         );
 };
