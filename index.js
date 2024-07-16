@@ -84,7 +84,7 @@ function init() {
             },
         ])
         .then((response) =>
-           writeToFile('testMD3.md', genMD.generateMarkdown(response)),
+           writeToFile('exampleREADME.md', genMD.generateMarkdown(response)),
         
         );
 };
