@@ -24,10 +24,12 @@ To install the project, make sure to save all the necessary files in one locatio
 
 To use the program first open a terminal from the root directory of the program. Then make sure NPM is installed by typing 'npm install' in the terminal. After it's installed, type 'node index.js' and follow the prompts. Once you've answered all the prompts, an 'exampleREADME.md' is created in the root directory. At this point you can move the 'exampleREADME.md' to the project folder you made it for and rename it to simply 'README.md'. It's what I did for this project!
 
+[Walkthrough video!](https://watch.screencastify.com/v/rD1v8rLg2ANRa0kT2YaR)
+
 ## Credits
 
-Daniel Dunnemann helped me figure out what badges were and where to find out how to use them.
-
+[Daniel Dunnemann](https://github.com/daniels-pancakes) helped me figure out what badges were and where to find out how to use them.
+[This stackoverflow article](https://stackoverflow.com/questions/441018/replacing-spaces-with-underscores-in-javascript) showed me how to change spaces to underscores in a string!
 
 ## License
 
